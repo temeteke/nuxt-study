@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <h1 class="title">ToDo</h1>
-        <input type="text" v-model="input">
+        <input v-model="input" type="text">
         <button @click="add">add</button>
-        <li v-for="todo in todos">
+        <li v-for="todo in todos" :key="todo">
             {{ todo }}
         </li>
     </div>
@@ -16,7 +16,6 @@ const input = ref<string>('')
 const todos = ref<string[]>([])
 
 const add = () => {
-    console.log(input.value)
     todos.value.push(input.value)
 }
 </script>

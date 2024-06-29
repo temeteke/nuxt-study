@@ -1,8 +1,7 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-    <Todo />
-    <Counter />
+    <TodoList />
+    <MyCounter />
   </div>
 </template>
