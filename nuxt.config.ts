@@ -6,9 +6,14 @@ export default defineNuxtConfig({
     server: {
       watch: {
         usePolling: true,
-      }
-    }
+      },
+    },
   },
 
-  modules: ["@nuxt/eslint"]
+  modules: ['@nuxt/eslint'],
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
 })
