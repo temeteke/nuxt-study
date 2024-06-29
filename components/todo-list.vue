@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const input = ref<string>('')
+const todos = ref<string[]>([])
+
+const add = () => {
+  todos.value.push(input.value)
+}
+</script>
+
 <template>
   <div id="app">
     <h1 class="title">
@@ -18,14 +29,3 @@
     </li>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const input = ref<string>('')
-const todos = ref<string[]>([])
-
-const add = () => {
-  todos.value.push(input.value)
-}
-</script>
