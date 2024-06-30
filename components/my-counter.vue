@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <button @click="increment">
+  <UButton @click="increment">
     Count is: {{ count }}
-  </button>
+  </UButton>
 </template>

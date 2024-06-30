@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxt/ui'],
   eslint: {
     config: {
       stylistic: true,
