@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const count = ref(0)
+interface Props {
+  initialCount?: number
+}
+
+const props = withDefaults(defineProps<Props>(), { initialCount: 0 })
+
+const count = ref(props.initialCount)
 
 const increment = () => {
   count.value++

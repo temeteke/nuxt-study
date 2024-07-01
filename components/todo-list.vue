@@ -10,17 +10,19 @@ const add = () => {
 </script>
 
 <template>
-  <UInput
-    v-model="input"
-    type="text"
-  />
-  <UButton @click="add">
-    add
-  </UButton>
-  <li
-    v-for="todo in todos"
-    :key="todo"
-  >
-    {{ todo }}
-  </li>
+  <div>
+    <UInput
+      v-model="input"
+      type="text"
+    />
+    <UButton @click="add">
+      add
+    </UButton>
+    <li
+      v-for="todo in todos"
+      :key="todo"
+    >
+      {{ todo }}
+    </li>
+  </div>
 </template>
