@@ -21,13 +21,12 @@ const add = () => {
       </UButton>
     </div>
     <ul>
-      <TodoItem
+      <li
         v-for="(todo, index) in todos"
         :key="index"
-        :index="index"
       >
-        {{ todo }}
-      </TodoItem>
+        <TodoListItem>{{ todo }}</TodoListItem>
+      </li>
     </ul>
   </div>
 </template>
