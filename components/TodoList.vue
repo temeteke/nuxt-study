@@ -1,11 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+interface Todo {
+  title: string
+  completed: boolean
+}
+
 const input = ref<string>('')
-const todos = ref<string[]>([])
+const todos = ref<Todo[]>([])
 
 const add = () => {
-  todos.value.push(input.value)
+  todos.value.push({ title: input.value, completed: false })
+}
+
+const remove = (index: number) => {
+  todos.value.splice(index, 1)
+}
+const changeCompleted = (index: number, value: boolean) => {
+  todos.value[index].completed = value
 }
 </script>
 
@@ -25,7 +37,12 @@ const add = () => {
         v-for="(todo, index) in todos"
         :key="index"
       >
-        <TodoListItem>{{ todo }}</TodoListItem>
+        <TodoListItem
+          :title="todo.title"
+          :completed="todo.completed"
+          @remove="remove(index)"
+          @change-completed="changeCompleted(index, $event)"
+        />
       </li>
     </ul>
   </div>

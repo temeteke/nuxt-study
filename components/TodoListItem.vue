@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+const props = defineProps<{
+  title: string
+  completed: boolean
+}>()
 
-const completed = ref(false)
+const emit = defineEmits(['remove', 'changeCompleted'])
+
+const completed = computed({
+  get: () => props.completed,
+  set: (value) => {
+    emit('changeCompleted', value)
+  },
+})
 </script>
 
 <template>
@@ -12,7 +22,13 @@ const completed = ref(false)
       style="margin-right: 0.5em"
     ><span
       :class="{ completed: completed }"
-    ><slot /></span>
+    >{{ title }}</span>
+    <UButton
+      variant="outline"
+      @click="$emit('remove')"
+    >
+      Remove
+    </UButton>
   </div>
 </template>
 
