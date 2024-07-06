@@ -3,21 +3,18 @@ import { ref } from 'vue'
 
 interface Todo {
   title: string
-  completed: boolean
+  date: Date
 }
 
 const input = ref<string>('')
 const todos = ref<Todo[]>([])
 
 const add = () => {
-  todos.value.push({ title: input.value, completed: false })
+  todos.value.push({ title: input.value, date: new Date() })
 }
 
 const remove = (index: number) => {
   todos.value.splice(index, 1)
-}
-const changeCompleted = (index: number, value: boolean) => {
-  todos.value[index].completed = value
 }
 </script>
 
@@ -35,13 +32,12 @@ const changeCompleted = (index: number, value: boolean) => {
     <ul>
       <li
         v-for="(todo, index) in todos"
-        :key="index"
+        :key="todo.date"
       >
         <TodoListItem
           :title="todo.title"
-          :completed="todo.completed"
+          :date="todo.date"
           @remove="remove(index)"
-          @change-completed="changeCompleted(index, $event)"
         />
       </li>
     </ul>

@@ -1,17 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{
   title: string
-  completed: boolean
+  date: Date
 }>()
 
-const emit = defineEmits(['remove', 'changeCompleted'])
+const completed = ref(false)
 
-const completed = computed({
-  get: () => props.completed,
-  set: (value) => {
-    emit('changeCompleted', value)
-  },
-})
+defineEmits(['remove'])
+
+const formattedDate = computed(() => props.date.toLocaleString())
 </script>
 
 <template>
@@ -22,7 +19,10 @@ const completed = computed({
       style="margin-right: 0.5em"
     ><span
       :class="{ completed: completed }"
-    >{{ title }}</span>
+    >
+      <span style="margin-right: 0.5em">{{ title }}</span>
+      <span style="margin-right: 0.5em">{{ formattedDate }}</span>
+    </span>
     <UButton
       variant="outline"
       @click="$emit('remove')"
