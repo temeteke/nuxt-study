@@ -16,12 +16,12 @@ const formattedDate = computed(() => props.date.toLocaleString())
     <input
       v-model="completed"
       type="checkbox"
-      style="margin-right: 0.5em"
+      class="mr-1"
     ><span
       :class="{ completed: completed }"
     >
-      <span style="margin-right: 0.5em">{{ title }}</span>
-      <span style="margin-right: 0.5em">{{ formattedDate }}</span>
+      <span class="mr-1">{{ title }}</span>
+      <span class="mr-1">{{ formattedDate }}</span>
     </span>
     <UButton
       variant="outline"
