@@ -8,7 +8,7 @@ const completed = ref(false)
 
 defineEmits(['remove'])
 
-const formattedDate = computed(() => props.date.toLocaleString())
+const formattedDate = computed(() => props.date.toISOString())
 </script>
 
 <template>
