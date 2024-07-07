@@ -20,12 +20,16 @@ const remove = (index: number) => {
 
 <template>
   <div>
-    <div>
+    <div class="flex">
       <UInput
         v-model="input"
         type="text"
+        class="flex-auto"
       />
-      <UButton @click="add">
+      <UButton
+        class="flex-none"
+        @click="add"
+      >
         add
       </UButton>
     </div>

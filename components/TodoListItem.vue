@@ -12,8 +12,8 @@ const formattedDate = computed(() => props.date.toISOString())
 </script>
 
 <template>
-  <div class="flex justify-between">
-    <div>
+  <div class="flex">
+    <div class="flex-auto">
       <input
         v-model="completed"
         type="checkbox"
@@ -25,7 +25,7 @@ const formattedDate = computed(() => props.date.toISOString())
         {{ title }}
       </span>
     </div>
-    <div>
+    <div class="flex-none">
       <span class="mr-1">{{ formattedDate }}</span>
       <UButton
         variant="outline"
