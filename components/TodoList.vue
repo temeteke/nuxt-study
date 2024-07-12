@@ -20,7 +20,7 @@ const remove = (index: number) => {
 
 <template>
   <div>
-    <div class="flex">
+    <div class="flex mb-1">
       <UInput
         v-model="input"
         type="text"
@@ -33,11 +33,10 @@ const remove = (index: number) => {
         add
       </UButton>
     </div>
-    <ul>
+    <ul class="flex flex-col gap-1">
       <li
         v-for="(todo, index) in todos"
         :key="todo.date.getTime()"
-        class="my-1"
       >
         <TodoListItem
           :title="todo.title"
