@@ -37,6 +37,7 @@ const remove = (index: number) => {
       <li
         v-for="(todo, index) in todos"
         :key="todo.date.getTime()"
+        class="my-1"
       >
         <TodoListItem
           :title="todo.title"

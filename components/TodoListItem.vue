@@ -12,29 +12,24 @@ const formattedDate = computed(() => props.date.toISOString())
 </script>
 
 <template>
-  <div class="flex">
-    <div class="flex-auto">
-      <input
-        v-model="completed"
-        type="checkbox"
-        class="mr-1"
-      ><span
-        class="mr-1"
-        :class="{ completed: completed }"
-      >
-        {{ title }}
-      </span>
+  <div class="flex gap-1">
+    <input
+      v-model="completed"
+      type="checkbox"
+    ><div
+      :class="{ completed: completed }"
+      class="flex-auto"
+    >
+      {{ title }}
     </div>
-    <div class="flex-none">
-      <span class="mr-1">{{ formattedDate }}</span>
-      <UButton
-        variant="outline"
-        size="2xs"
-        @click="$emit('remove')"
-      >
-        Remove
-      </UButton>
-    </div>
+    <div>{{ formattedDate }}</div>
+    <UButton
+      variant="outline"
+      size="2xs"
+      @click="$emit('remove')"
+    >
+      Remove
+    </UButton>
   </div>
 </template>
 
