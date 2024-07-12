@@ -1,11 +1,14 @@
 <script setup lang="ts">
 const links = [
   [{
+    label: 'Home',
+    to: '/',
+  }, {
     label: 'ToDo',
-    to: 'todo',
+    to: '/todo',
   }, {
     label: 'Counter',
-    to: 'counter',
+    to: '/counter',
   }], [{
     label: 'Examples',
     icon: 'i-heroicons-light-bulb',
@@ -18,7 +21,10 @@ const links = [
 
 <template>
   <div>
-    <UHorizontalNavigation :links="links" />
+    <UHorizontalNavigation
+      :links="links"
+      class="mb-1"
+    />
     <UContainer>
       <slot />
     </UContainer>
