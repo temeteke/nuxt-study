@@ -18,7 +18,7 @@ const formattedDate = computed(() => props.date.toISOString())
       type="checkbox"
     ><div
       :class="{ completed: completed }"
-      class="flex-auto"
+      class="flex-auto truncate"
     >
       {{ title }}
     </div>
