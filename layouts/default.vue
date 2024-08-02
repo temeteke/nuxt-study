@@ -1,6 +1,31 @@
+<script setup>
+import { ref } from 'vue'
+
+const drawer = ref(null)
+</script>
+
 <template>
-  <div>
-    <p>Some default layout content shared across all pages</p>
-    <slot />
-  </div>
+  <v-app>
+    <v-navigation-drawer v-model="drawer">
+      <v-list>
+        <v-list-item
+          title="Home"
+          value="home"
+        />
+        <v-list-item
+          title="About"
+          value="about"
+        />
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar>
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-app-bar-title>Application</v-app-bar-title>
+    </v-app-bar>
+
+    <v-main>
+      <slot />
+    </v-main>
+  </v-app>
 </template>
