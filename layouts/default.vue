@@ -10,11 +10,15 @@ const drawer = ref(null)
       <v-list>
         <v-list-item
           title="Home"
-          value="home"
+          to="/"
         />
         <v-list-item
-          title="About"
-          value="about"
+          title="Counter"
+          to="/counter"
+        />
+        <v-list-item
+          title="ToDo"
+          to="/todo"
         />
       </v-list>
     </v-navigation-drawer>
