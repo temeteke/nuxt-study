@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <button @click="increment">
+  <v-btn @click="increment">
     Count is: {{ count }}
-  </button>
+  </v-btn>
 </template>
